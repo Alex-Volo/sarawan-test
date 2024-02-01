@@ -1,0 +1,9 @@
+.wrapper {
+  width: 820px;
+}
+
+.cards {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
