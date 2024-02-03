@@ -1,7 +1,7 @@
-import { Book } from "../../types";
+import { IBook } from "../../types";
 import S from "./BookCard.module.css";
 
-export const BookCard: React.FC<{ book?: Book }> = ({ book }) => {
+export const BookCard: React.FC<{ book?: IBook }> = ({ book }) => {
   return (
     <div className={S.card}>
       <span className={S.delete}>X</span>

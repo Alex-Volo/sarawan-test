@@ -1,4 +1,4 @@
-export type Book = {
+export interface IBook {
   id: number;
   title: string;
   authors: {
@@ -19,5 +19,3 @@ export type Book = {
   formats: {};
   download_count: number;
 };
-
-export type Books = Book[];
