@@ -1,9 +1,11 @@
+import { useNavigate } from "react-router-dom";
 import { IBook } from "../../types";
 import S from "./BookCard.module.css";
 
 export const BookCard: React.FC<{ book?: IBook }> = ({ book }) => {
+  const navigate = useNavigate();
   return (
-    <div className={S.card}>
+    <div onClick={() => navigate(`book/${book?.id}`)} className={S.card}>
       <span className={S.delete}>X</span>
       <h2 className={S.title}>{book?.title}</h2>
       <p className={S.author}>Author: {book?.authors[0].name}</p>
