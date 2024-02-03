@@ -1,12 +1,15 @@
-// import { books } from "../../store/fakeStore";
 import { BookCard } from "../../components/BookCard/BookCard";
 import S from "./Main.module.css";
 import { getBooks } from "../../service/api";
-import { useEffect, useState } from "react";
-import { IBook } from "../../types";
+import { useEffect } from "react";
+// import { IBook } from "../../types";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { booksSelector } from "../../store";
+import { setBooks } from "../../store/booksSlice";
 
 export const Main: React.FC = () => {
-  const [books, setBooks] = useState<IBook[] | []>([]);
+  const books = useAppSelector(booksSelector);
+  const dispatch = useAppDispatch();
 
   const cardsElements = books.map((book) => {
     return <BookCard key={book?.id} book={book} />;
@@ -14,9 +17,9 @@ export const Main: React.FC = () => {
 
   useEffect(() => {
     getBooks().then((books) => {
-      setBooks(books);
+      dispatch(setBooks(books));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <div className={S.wrapper}>
