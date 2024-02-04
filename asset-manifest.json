@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/sarawan-test/static/css/main.8dc3abd9.css",
+    "main.js": "/sarawan-test/static/js/main.db23f1e2.js",
+    "index.html": "/sarawan-test/index.html",
+    "main.8dc3abd9.css.map": "/sarawan-test/static/css/main.8dc3abd9.css.map",
+    "main.db23f1e2.js.map": "/sarawan-test/static/js/main.db23f1e2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8dc3abd9.css",
+    "static/js/main.db23f1e2.js"
+  ]
+}
