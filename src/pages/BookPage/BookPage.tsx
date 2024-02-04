@@ -19,7 +19,7 @@ export const BookPage: React.FC = () => {
       <ul>
         Subjects:{" "}
         {currentBook?.subjects.map((subj) => (
-          <li>{subj}</li>
+          <li key={subj}>{subj}</li>
         ))}
       </ul>
       <a target="_blanc" href={currentBook?.formats["text/html"]}>
