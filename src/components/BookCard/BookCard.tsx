@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import { IBook } from "../../types";
 import S from "./BookCard.module.css";
-import { toggleLike } from "../../store/booksSlice";
+import { deleteCard, toggleLike } from "../../store/booksSlice";
 import { useAppDispatch } from "../../hooks";
 
 export const BookCard: React.FC<{ book?: IBook }> = ({ book }) => {
@@ -12,7 +12,14 @@ export const BookCard: React.FC<{ book?: IBook }> = ({ book }) => {
 
   return (
     <div onClick={() => navigate(`book/${book.id}`)} className={S.card}>
-      <span className={S.delete}>X</span>
+      <span
+        onClick={(e) => {
+          e.stopPropagation();
+          dispatch(deleteCard(book.id));
+        }}
+        className={S.delete}>
+        X
+      </span>
       <h2 className={S.title}>{book.title}</h2>
       <p className={S.author}>Author: {book.authors[0].name}</p>
       <p className={S.subjects}>Subjects: {book.subjects.join(" ")}</p>
