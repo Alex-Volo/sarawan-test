@@ -31,7 +31,6 @@ export const Main: React.FC = () => {
       <button
         onClick={() => {
           setIsFiltering(!isFiltering);
-          console.log("фильтруетсчя", isFiltering);
         }}
         className={S.filterButton}>
         {isFiltering ? "Show all" : "Show only liked"}
