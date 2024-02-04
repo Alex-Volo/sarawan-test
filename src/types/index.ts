@@ -1,4 +1,5 @@
 export interface IBook {
+  isLiked?: boolean;
   id: number;
   title: string;
   authors: {
@@ -16,6 +17,6 @@ export interface IBook {
   languages: string[];
   copyright: boolean;
   media_type: string;
-  formats: {};
+  formats: { [identifier: string]: string };
   download_count: number;
-};
+}
